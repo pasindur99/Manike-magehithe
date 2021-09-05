@@ -1,0 +1,26 @@
+name: testSong
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install all the requirements
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+      - name: Run the program
+        run: python3 main.py
+      - name: Upload wav files
+        uses: actions/upload-artifact@v2
+        with:
+          name: Upload wav files
+          path: Manike-mage.wav 

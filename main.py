@@ -46,7 +46,7 @@ def get_chord_data(chords):
 
 def main():
     #Notes of "Manike-mage"
-    music_notes = 'C-C-G-G-A-A-G--F-F-E-E-D-D-C--G-G-F-F-E-E-D--G-G-F-F-E-E-D--C-C-G-G-A-A-G--F-F-E-E-D-D-C'
+    music_notes = 'C-C-G-G-A-A-G--F-F-E-E-D-D-C--G-G-F-F-E-E-D--G-G-F-F-E-E-D--C-C-G-G-A-A-G--F-F-E-E-D-D-D'
     data = get_song_data(music_notes)
     data = data * (16300/np.max(data))
     write('Manike-mage.wav', samplerate, data.astype(np.int16))
