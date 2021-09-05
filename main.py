@@ -45,18 +45,12 @@ def get_chord_data(chords):
 
 
 def main():
-    #Notes of "twinkle twinkle little star"
+    #Notes of "Manike-mage"
     music_notes = 'C-C-G-G-A-A-G--F-F-E-E-D-D-C--G-G-F-F-E-E-D--G-G-F-F-E-E-D--C-C-G-G-A-A-G--F-F-E-E-D-D-C'
     data = get_song_data(music_notes)
     data = data * (16300/np.max(data))
-    write('twinkle-twinkle.wav', samplerate, data.astype(np.int16))
+    write('Manike-mage.wav', samplerate, data.astype(np.int16))
     
-    #Playing chords
-    chords = 'EgB-DfA-AcE-BDf-gAcE-fAc'
-    data = get_chord_data(chords)
-    data = data * (16300/np.max(data))
-    data = np.resize(data, (len(data)*5,))
-    write('exp-C-Major.wav', samplerate, data.astype(np.int16))
     
 if __name__=='__main__':
     main()
